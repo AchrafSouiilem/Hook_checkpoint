@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import MovieList from './components/movieList';
+import Filter from './components/filter';
+import { useState } from 'react';
+import movieData from './components/movieData';
 
 function App() {
+  const [movies, setMovies] = useState(movieData)
+  const [filterTitle, setFliterTitle]= useState("")
+  const [filterRating, setFilterRating] = useState(0)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Filter filterRating={filterRating} setFilterRating={setFilterRating} setFliterTitle={setFliterTitle} />
+      <MovieList movies={movies} filterRating={filterRating} filterTitle={filterTitle} setMovies={setMovies}  />
     </div>
   );
 }
-
 export default App;
