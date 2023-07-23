@@ -26,10 +26,11 @@ export default function AddMovie({movies, setMovies}) {
   const [addTitle, setAddTitle] = useState("");
   const [addDescription, setAddDescription] = useState("");
   const [addPosterurl, setAddPosterurl] = useState("");
+  const [addTrailer, setAddTrailer] = useState("");
   const [addRating, setAddRating] = useState(0);
 
   const addMovieFunction = () => {
-    if(addPseudo==="" || addTitle==="" || addDescription==="" || addPosterurl==="" || addRating===0){
+    if(addPseudo==="" || addTitle==="" || addDescription==="" || addPosterurl==="" || addTrailer==="" || addRating=== 0){
         alert("all fields are required")
     }
     else {
@@ -40,6 +41,7 @@ export default function AddMovie({movies, setMovies}) {
                 title: addTitle,
                 description: addDescription,
                 posterURL: addPosterurl,
+                Trailer: addTrailer,
                 rating: addRating,
             }
         ])
@@ -47,6 +49,7 @@ export default function AddMovie({movies, setMovies}) {
         setAddTitle("")
         setAddDescription("")
         setAddPosterurl("")
+        setAddTrailer("")
         setAddRating(0)
         handleClose()
     }
@@ -73,6 +76,9 @@ export default function AddMovie({movies, setMovies}) {
             <TextField label="Movie description" variant="filled" fullWidth onChange={(e) => setAddDescription(e.target.value)} />
             <br/>
             <TextField label="Movie PosterUrl" variant="filled" fullWidth onChange={(e) => setAddPosterurl(e.target.value)} />
+            <br/>
+            <TextField label="Movie Trailer Code" variant="filled" fullWidth onChange={(e) => setAddTrailer(e.target.value)} />
+            <br/>
             <Rating className="center"
               name="simple-controlled"
               value={addRating}

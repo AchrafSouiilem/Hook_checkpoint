@@ -8,12 +8,12 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
 }
 
 .position {
-  margin: 100px 0 30px 0;
+  margin: 100px auto 30px auto ;
   text-align: center;
 }
 
@@ -23,14 +23,6 @@ body {
   left: 0;
   width: 100%;
   z-index: 3;
-}
-
-.css-2y464i-MuiInputBase-root-MuiFilledInput-root {
-  margin-top: 10px;
-}
-
-.center{
-  margin-left: 35%;
 }
 
 .css-1wnsr1i {
@@ -45,4 +37,42 @@ body {
 
 .css-r40f8v-MuiTypography-root {
   color: white !important;
+}
+
+.color {
+  color: white;
+}
+
+.design {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+}
+
+.design img {
+  grid-row: 1/4;
+}
+
+.App {
+  max-width:  2000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pos {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  position: relative;
+}
+
+a:-webkit-any-link {
+  color: transparent !important;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.css-r40f8v-MuiTypography-root {
+  height: 150px !important;
 }
